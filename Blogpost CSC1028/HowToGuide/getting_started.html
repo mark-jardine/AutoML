@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <title>Getting Started</title>
+        <meta name="description" content="website description" />
+        <meta name="keywords" content="website keywords, website keywords" />
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="style/style.css" />
+    </head>
+
+    <body>
+        <div id="main">
+            <div id="header">
+                <div id="logo">
+                    <div id="logo_text">
+                        <h1><a href="index.html">A guide to set up fast.ai + Gradient for Machine Learning</a></h1>
+                    </div>
+                </div>
+                <div id="menubar">
+                    <ul id="menu">
+                        <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+                        <li><a href="index.html">Home</a></li>
+                        <li class="selected"><a href="getting_started.html">Getting Started</a></li>
+                        <li><a href="goal.html">My Goal</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="site_content">
+                <div id="sidebar_container">
+                    <div class="sidebar">
+                        <div class="sidebar_top"></div>
+                        <div class="sidebar_item">
+                            <h3>Useful Links</h3>
+                            <ul>
+                                <li><a href="https://gradient.paperspace.com/" target="_blank">Gradient Website</a></li>
+
+                                <li><a href="https://www.fast.ai/" target="_blank">Fast.ai Website</a></li>
+
+                                <li><a href="https://github.com/fastai" target="_blank">Fast.ai GitHub Repository</a></li>
+
+                                <li><a href="https://course.fast.ai/" target="_blank">Fast.ai Course</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="sidebar_base"></div>
+                    </div>
+                </div>
+                <div id="content">
+                    <!-- insert the page content here -->
+                    <h1>Getting Started</h1>
+                    <p>Here you will learn how to get a Gradient notebook running alongside the fast.ai framework.</p>
+                    <h2>Creating an account</h2>
+                    <p>Firstly, you will have to create an account with Gradient</p>
+                    <ul>
+                        <li>Go to the <a href="https://gradient.paperspace.com/" target="_blank">Gradient Website</a>.</li>
+                        <li>Confirm your account and sign in.</li>
+                    </ul>
+
+                    <h2>Creating a Notebook</h2>
+                    <p>Now that we have signed into our account, we can create a fast.ai notebook:</p>
+                    <span class="center"> <img src="images/image5.png" width="600"></span>
+                    <ul>
+                        <li>In the Notebooks tab, click "Create Notebook"</li>
+                        <li>Create a name for your Notebook</li>
+                        <span class="center"> <img src="images/image4.png" width="600"></span>
+                    </ul>
+                    <ul>
+                        <li>Select "Paperspace + fast.ai"</li>
+                        <span class="center"> <img src="images/image2.png" width="600"></span>
+                    </ul>
+                    <ul>
+                        <li>Choose any available instance for your machine type.
+                            (A GPU instance is preferable, but we can change this later).</li>
+                        <span class="center"> <img src="images/image6.png" width="230"></span>
+                    </ul>
+                    <ul>
+                        <li>After you confirm and create the notebook you will see your new notebook:</li>
+                        <span class="center"> <img src="images/image3.png" width="600"></span>
+                    </ul>
+                    <ul>
+                        <li>However you may see "Error" in the status column if you are using a free machine instance.</li>
+                        <span class="center"> <img src="images/image9.png" width="200"></span>
+                    </ul>
+                    <ul>
+                        <li>This error is caused because some free machine types may not be available. <br>FIX: you need to click the start button under the “Actions” column </li>
+                        <li>Change the instance type to one of the free GPU’s. It may take a few attempts to find one that will work. You will know that a particular instance will work when the "Start Notebook" button will become selectable.</li>
+                        <span class="center"> <img src="images/image7.png" width="300"></span>
+                    </ul>
+                    <br>
+                    <ul>
+
+                        <li>Click “Start Notebook”</li>
+                        <li>If the instance type is available you will see the notebook starting up:
+                        </li>
+                        <span class="center"> <img src="images/image8.png" width="300"></span>
+                    </ul>
+                    <ul>
+                        <li>It may take a few minutes to start running, you will know when it's done:</li>
+                        <span class="center"> <img src="images/running_crop.png" width="200"></span>
+                    </ul>
+
+                    <h2>Opening a fast.ai chapter's Notebook</h2>
+                    <ul>
+                        <li>Under "Actions" click one of "Open" options.
+                            (I prefer V1 and will be using it in this tutorial):</li>
+                        <span class="center"> <img src="images/click_open_nb.png" width="300"></span>
+
+                        <li>You should see a collection of folders and notebook(.ipynb) files here.
+                            <br>(If you don't, and only see "Data" and "Storage" try making a new notebook following the same processes outlined previously and that should fix it.)</li>
+                        <li>However, before we open one of the chapter's Notebooks
+                            we should update our fast.ai container.</li>
+                        <li>Open a terminal console by clicking the "New" button and then selecting "Terminal".</li>
+                        <span class="center"> <img src="images/button_new.png" width="300"></span>
+                        <li>Once your terminal is open type the following command and hit enter:
+                            <br><span class = "center"><b>pip install fastai fastcore --upgrade</b></span>
+                            <span class="center"> <img src="images/terminal_pip.png" width="600"></span></li>
+
+                        <li>After it's finished it will look like this:</li>
+                        <span class="center"> <img src="images/terminal_pip_finished.png" width="600"></span>
+
+                        <li>You can now close the terminal window.</li>
+                        <li>Open whichever chapter's Notebook you wish:
+                            <span class="center"> <img src="images/chapter2.png" width="600"></span></li>
+                        
+                        <li> In order to run the cells, just simply select the cell and click the "Run" button in the toolbar near the top.</li>
+
+                        <b class = "center"><i>Have fun learning Fast.ai!</i></b>
+
+                    </ul>
+
+                </div>
+            </div>
+            <div id="footer">
+                <p><a href="index.html">Home</a> | <a href="getting_started.html">Getting Started</a> | <a href="goal.html">My Goal</a> | <a href="contact.html">Contact Me</a></p>
+                <p>Copyright &copy; simplestyle_3 | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">HTML5 Web Templates</a></p>
+            </div>
+            <p>&nbsp;</p>
+        </div>
+    </body>
+</html>

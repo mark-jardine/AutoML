@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<!--
+Monochromed by TEMPLATED
+templated.co @templatedco
+Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+    <head>
+        <title>AutoML</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+        <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/skel-panels.min.js"></script>
+        <script src="js/init.js"></script>
+        <noscript>
+            <link rel="stylesheet" href="css/skel-noscript.css" />
+            <link rel="stylesheet" href="css/style.css" />
+        </noscript>
+        <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+        <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+    </head>
+    <body>
+
+        <!-- Header -->
+        <div id="header">
+            <div class="container">
+
+                <!-- Logo -->
+                <div id="logo">
+                    <h1><a href="#">AutoML</a></h1>
+                    <span>formalising and automating the stages in training a Machine Learning algorithm</span>
+                </div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">About</a></li>
+                        <li class= "active"><a href="yolov5.html">Yolov5</a></li>
+                        <li><a href="goal.html">Project goal</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+        <!-- Header -->
+
+
+        <!-- Main -->
+        <div id="main">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Content -->
+                    <div id="content">
+                        <section>
+                            <header>
+                                <h2>YOLOv5</h2>
+                                <span class="byline">State of the art ML object detection algorithm</span>
+                            </header>
+
+                            <header>
+                                <h2>Implementing YOLO in a Colab Notebook</h2>
+                            </header>
+
+                            <p>
+                                All of my work with YOLO is built upon this YOLOv5 tutorial 
+                                <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb" target="_blank">notebook</a>.
+
+                                You can find the github repository that this notebook is contained in here: <a href="https://github.com/ultralytics/yolov5" target="_blank">YOLOv5 Repository</a>.    
+                            </p>
+
+                            <p>
+                                This notebook is a <a href="https://pytorch.org/" target="_blank">Pytorch</a> implementation of the  algorithm and it was very useful for me and allowed me to build upon it to customise it for my own use. Moreover, the Fast.ai framework is built upon Pytorch and so future integration should be more acheiveable.
+                            </p>
+
+                            <p>
+                                You can find my customised notebook in my github repository <a href=https://github.com/mark-jardine/Yolov5-Fast.ai target="_blank">here</a>.   
+                            </p>
+
+                            <header>
+                                <h2>Customising the Notebook</h2>
+                            </header>
+
+
+                            <header>
+                                <h3>Setup</h3>
+                            </header>
+
+                            <ul id="customList">
+                                <li>I created a copy of the tutorial notebook. </li>
+                                <li>I then mounted my Google Drive to the notebook for easy access to stored data.</li>
+                                <li>I added in some installation commands for fast.ai because my original plan was to use the fast.ai.widgets library for user input of an image.</li>
+                                <li>I then pasted in the cell for installing the YOLOv5 github repository from the tutorial notebook.</li>
+                                <li>I also copied the cell for downloading the COCO dataset from the tutorial notebook. This was for testing purposes to see if I could just get the training command to work.</li>
+                                <li>After running train.py on the model using COCO, I tried running an inference on a custom image I got from the internet that contained classes within COCO. </li><br><br>
+                                <li><b>Before:</b> <br> <img src="images/yolo_test_img.jpg" alt = "Original Image" style="Width: 500px; height: auto; margin-left: 240px;" ></li> <li><b>After:</b> <br> <img src="images/yolo_test_inf1.png" alt = "Inferred Image" style="Width: 500px; height: auto; margin-left: 240px;" ></li>
+                                <li>After making inferences on some more custom images I thought to compile my own dataset to see how that could be acheived.</li>
+                                <li>At first I attempted looking for large datasets to use and found one that I liked, however I didn't realise that datasets are in different formats for different use cases. I wasted a lot of time uploading the dataset to google drive and unsurprisingly it did not work when I tried to train on it. </li>
+                                <li>Therefore I recommend not attempting this because datasets in the correct format are very rare to find.
+                                </li>
+                                <li>Then I attempted to collate my own small dataset for a proof of concept. (To test my ability to train a custom dataset.)</li>
+                                <li>I discovered the use of .yaml files and the proper file structure of the dataset for YOLOv5. (I studied the already-present COCO dataset.)</li>
+
+
+                                <header>
+                                    <br>
+                                    <h3>Creating a custom dataset</h3>
+                                </header>
+
+                                <li>
+                                    In order to run the train command you need a .yaml file which stores the locations of the image folders within your directory.
+                                </li>
+                                <li>The .yaml file will also specify both the number of classes within your dataset and the names of those classes.</li>
+                                <li>I created my base .yaml file as follows (# precedes a comment):
+                                    <blockquote>
+                                        train: #path<br>
+                                        val: #path<br>
+                                        nc:3 #number of classes<br>
+                                        names = ["","",""]
+                                    </blockquote>
+                                    I left some attributes blank before I figured out what my dataset would include. <br> <br>
+                                </li>
+                                <li>I then created a dataset for 3 different types of african animal just by downloading images of the animals.
+                                </li>
+                                <li>I found out about the appropriate YOLO format 
+                                    <a href="https://www.youtube.com/watch?v=GRtgLlwxpc4&ab_channel=DeepLearning" target="_blank">here</a> and used the <a href="https://www.makesense.ai/" target="_blank">tool</a> the creator mentioned.
+
+                                    This tool is very useful because unlike some other popular image labelling tools, it allows you to export your bounding box annotations in the yolo format, which you then store in the labels folder.
+                                </li>
+                                <li><b>Directory Structure:</b>
+
+                                    <ul><!-- top lvl-->
+                                        <li>Dataset/</li>
+
+                                        <ul><!-- lvl 2-->
+
+                                            <li>Images/</li>
+
+                                            <ul><!-- lvl 3-->
+                                                <li>Train/</li>
+                                                <li>Val/</li>
+                                            </ul><!-- lvl 3/-->
+
+                                            <li>Labels</li>
+
+                                            <ul><!-- lvl 3-->
+                                                <li>Train/</li>
+                                                <li>Val/</li>
+                                                <!-- lvl 3/-->
+                                            </ul>
+
+                                        </ul><!-- lvl 2/-->
+
+                                    </ul><!-- top level/-->
+                                </li>
+                                <li>
+                                    For each folder of images(train, val) I found it easiest to label one folder at a time and then when exporting those labels, store them in the associated labels folder.
+                                </li>
+
+
+
+                                <header>
+                                    <br>
+                                    <h3>Training your dataset</h3>
+                                </header>
+
+                                <li>
+                                    Upload both your dataset and your .yaml file to your google drive.
+                                </li>
+
+                                <li>Run the train command:
+                                    <blockquote>
+                                        !python train.py --img 640 --batch 4 --epochs 100 --data /content/drive/MyDrive/myData.yaml --weights yolov5s.pt --cache
+                                    </blockquote>
+                                    I used 100 epochs for the first time training because I didn't want to overfit.<br><br>
+                                </li>
+                                
+
+                                <header>
+                                    <br>
+                                    <h3>Making an inference</h3>
+                                </header>
+                                
+                                <li><b>Note:</b> remember to use the weights produced from the training operation.<br><br>
+                                    You will find the path for these weights at the end of the training dialogue:
+                                    <blockquote>
+                                        Optimizer stripped from <b>runs/train/exp2/weights/last.pt</b>, 14.4MB
+                                    </blockquote><br><br>
+                                </li>
+
+                                <li>
+                                    Run the detect command on an image(I recommend uploading it to google drive):
+                                    <blockquote>
+                                        !python detect.py --weights /content/yolov5/runs/train/exp2/weights/last.pt --img 640 --conf 0.1 --source /content/drive/MyDrive/yolov5_data/imgs/test_images/lion_test.jpg
+                                    </blockquote><br><br>
+                                    
+                                    This is the inference I got with an image from the internet: <br><br>
+                                    <img src="images/lion_test_inf3.jpg" alt="Lion inference" style="Width: 500px; height: auto; margin-left: 240px;">
+                                </li>
+                                <li>It's clear that my model will need more training for it to classify accurately.</li>
+
+
+
+                            </ul>
+
+
+                        </section>
+                    </div>
+                    <!-- /Content -->
+
+
+
+                </div>
+
+            </div>
+        </div>
+        <!-- Main -->
+
+
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <div class="container">
+                Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+            </div>
+        </div>
+
+    </body>
+</html>
