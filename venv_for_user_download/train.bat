@@ -1,4 +1,4 @@
-!python yolov5/detect.py --weights runs/train/exp7/weights/last.pt --img 640 --conf 0.1 --source datasets/african_animals/images/val/Hyena_7.jpg
+!python yolov5/train.py --img 640 --batch 4 --epochs 1 --data /yolov5/data/myData.yaml --weights yolov5s.pt --cache
 :: params
 
 ::  --batch = batch size
