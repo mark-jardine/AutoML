@@ -1,0 +1,11 @@
+train: ../venv/datasets/african_animals/images/train
+#directory for training data
+
+val: ../venv/datasets/african_animals/images/val
+#directory for validation data
+
+# number of classes
+nc: 3
+
+# class names
+names: [ 'Lion', 'Hyena', 'Zebra']
