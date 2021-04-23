@@ -1,5 +1,5 @@
 #!/bin/bash
-python yolov5/detect.py --weights runs/train/exp7/weights/last.pt --img 640 --conf 0.1 --source datasets/african_animals/images/val/Hyena_7.jpg
+python yolov5/detect.py --weights runs/train/exp/weights/last.pt --img 640 --conf 0.1 --source datasets/african_animals/images/val/Hyena_7.jpg
 
 #params
 
