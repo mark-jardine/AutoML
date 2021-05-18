@@ -2,7 +2,7 @@
 :: params
 
 ::  --conf = inference confidence, 0-1
-#output image will only show detections that have a confidence >= this parameter
+::output image will only show detections that have a confidence >= this parameter
 
 ::  --weights = the weights used for training 
 :: (you should use the weights outputted by the train command found in "runs/train/exp{experimentNumber}")
